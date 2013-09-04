@@ -483,5 +483,12 @@ I've added a `--lint-stderr` config option which forces all lint output to `stde
 <h3 id="exp.cli.recursive">Recursive Building</h3>
 
 <p>
-    Adding `--recursive` to the `--walk` command will tell `shifter` to walk the directories recursively looking for `build.json` files. 
+    Adding `--recursive` to the `--walk` command will tell `shifter` to walk the directories recursively looking for `build.json` files.
 </p>
+<p>When building recursively, if you want to produce usable coverage instrumentation, you must also create a .shifter.json file with the coverageRelativeToConfig set to true.</p>
+
+```
+{
+  coverageRelativeToConfig: true
+}
+```
