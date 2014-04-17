@@ -297,11 +297,23 @@ var tests = {
                 assert.isFunction(topic);
             },
             'and should produce an error on empty results': function(topic) {
+                var testFile = path.join(__dirname, 'assets/copy/src/in/files/foo.txt');
+
                 topic({}, {
                     result: '',
-                    name: 'foo.txt'
+                    name: testFile
                 }, function(err) {
-                    assert.equal(err, 'writing zero length file from foo.txt');
+                    assert.equal(err, 'writing zero length file from ' + testFile);
+                });
+            },
+            'and should not produce an error on empty results when source is also empty': function(topic) {
+                var testFile = path.join(__dirname, 'assets/copy/src/in/files/empty.txt');
+
+                topic({}, {
+                    result: '',
+                    name: testFile
+                }, function(err) {
+                    assert.equal(err, null);
                 });
             }
         },

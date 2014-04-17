@@ -1,0 +1,1 @@
+Some sample content to check for a non-null source
