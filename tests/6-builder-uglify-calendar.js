@@ -122,9 +122,6 @@ function createTests(buildSkin) {
                             },
                             'debug should be same': function(err, results) {
                                 assert.equal(results.pre['calendar-debug.js'], results.post['calendar-debug.js']);
-                            },
-                            'coverage should be same': function(err, results) {
-                                assert.equal(results.pre['calendar-coverage.js'], results.post['calendar-coverage.js']);
                             }
                         }
                     };

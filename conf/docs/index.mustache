@@ -48,7 +48,6 @@
                                    --quiet to mute stdout from sub build
                                    all other build options accepted here: (--strict, --lint, etc)
        --jsstamp/--no-jsstamp  Should it stamp the JS with the YUI.add wrapper, defaults to --stamp
-       --istanbul              Use Istanbul code coverage instead of YUITest for coverage build
     Experimental Options:
        --semi                  Toggle on the strict semicolon checking in Uglify
        --cache/--no-cache      Cache the results of the build and bail if building for no reason, defaults to --no-cache
@@ -100,8 +99,10 @@ directory below `assets`, shifter will do the right thing.
 
 <h2 id="coverage">Code Coverage</h2>
 
-<p>When `shifter` builds a module, it auto generates a `-coverage` file generated with <a href="http://yuilibrary.com/yuitest">YUITest Code Coverage</a></p>
-<p>If you pass the `--istanbul` option, `shifter` will use the new <a href="https://github.com/gotwarlost/istanbul">Istanbul Code Coverage</a> tool.</p>
+<p>Code coverage used to be automatically generated when `shifter` built a module, but this has been deprecated in favour of generating coverage in
+the <a href="https://github.com/yui/yeti">Yeti</a> tool.</p>
+
+<p>If you do not use `yeti`, then you will need to instrument your own coverage files.</p>
 
 <h2 id="meta">meta-data</h2>
 
@@ -259,7 +260,6 @@ merge them together, so your results may vary on this.</p>
     ```
     "shifter": {
         "jsstamp": false,
-        "coverage": false,
         "lint": "defaults"
     }
     ```
@@ -306,7 +306,6 @@ Below is an example `.shifter.json`:
     "replace-yuivar": "F",
     "replace-version": "1.2.3.4",
     "lint": false,
-    "coverage": false,
     "regex": "^.*?(?:logger|Y.log).*?(?:;|\\).*;|(?:\\r?\\n.*?)*?\\).*;).*;?.*?\\r?\\n|^.*?(?:\/\\*@DBG\\*\/).*\\r?\\n"
 }
 ```
@@ -420,7 +419,7 @@ From time to time I will add experimental options to shifter to allow for develo
 
 <p>
 You can turn on build time caching with the `--cache` config option. This will write a cache file out with the MD5's of the build. If
-the MD5 matches one in the meta file, the build will abort and skip the remaining tasks (`compressor, coverage, etc`) to speed up development.
+the MD5 matches one in the meta file, the build will abort and skip the remaining tasks (`yuglify, etc`) to speed up development.
 </p>
 
 <p>

@@ -104,9 +104,6 @@ var tests = {
                     },
                     'debug should be same': function(err, results) {
                         assert.equal(results.pre['event-base-ie-debug.js'], results.post['event-base-ie-debug.js']);
-                    },
-                    'coverage should be same': function(err, results) {
-                        assert.equal(results.pre['event-base-ie-coverage.js'], results.post['event-base-ie-coverage.js']);
                     }
                 },
                 'should produce same rollup files and': {
@@ -157,9 +154,6 @@ var tests = {
                     },
                     'debug should be same': function(err, results) {
                         assert.equal(results.pre['event-base-debug.js'], results.post['event-base-debug.js']);
-                    },
-                    'coverage should be same': function(err, results) {
-                        assert.equal(results.pre['event-base-coverage.js'], results.post['event-base-coverage.js']);
                     }
                 }
             }

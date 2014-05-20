@@ -34,7 +34,6 @@ var tests = {
                         cwd: srcBase,
                         lint: false,
                         csslint: false,
-                        coverage: false,
                         compressor: false,
                         'global-config': false,
                         cache: false,

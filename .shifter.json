@@ -1,5 +1,4 @@
 {
     "silent": false,
-    "istanbul": true,
     "build-dir": "./tests/assets-global/"
 }

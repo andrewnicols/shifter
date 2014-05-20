@@ -21,11 +21,9 @@ var argsTests = {
     '--list': 'list',
     '--exec': 'exec',
     '--semi': 'semi',
-    '--istanbul': 'istanbul',
     '--progress': 'progress',
     '--assets': 'assets',
     '--csslint': 'csslint',
-    '--coverage': 'coverage',
     '--clean': 'clean',
     '--lint-stderr': 'lint-stderr',
     '-w': 'walk'
@@ -92,14 +90,6 @@ var tests = {
         },
         'progress should be false': function(topic) {
             assert.isFalse(topic.progress);
-        }
-    },
-    'should parse --no-istanbul': {
-        topic: function() {
-            return args.parse(['', '', '--no-istanbul']);
-        },
-        'istanbul should be false': function(topic) {
-            assert.isFalse(topic.istanbul);
         }
     },
     'should parse --no-semi': {
@@ -189,22 +179,6 @@ var tests = {
             assert.isFalse(topic.exec);
         }
     },
-    'should parse --no-coverage': {
-        topic: function() {
-            return args.parse(['', '', '--no-coverage']);
-        },
-        'parsed as false': function(topic) {
-            assert.isFalse(topic.coverage);
-        }
-    },
-    'should have coverage by default': {
-        topic: function() {
-            return args.parse(['', '']);
-        },
-        'parsed as true': function(topic) {
-            assert.isTrue(topic.coverage);
-        }
-    },
     'should have exec by default': {
         topic: function() {
             return args.parse(['', '']);
@@ -260,7 +234,6 @@ var tests = {
         'should do something': function(topic) {
             assert.ok(topic.spec); //from vows
             assert.ok(topic.jsstamp);
-            assert.ok(topic.coverage);
             assert.ok(topic.exec);
             assert.isFalse(topic.quiet);
             assert.isFalse(topic.cache);

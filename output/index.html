@@ -23,7 +23,7 @@
     <div class="yui3-g">
         <div class="yui3-u-3-4">
             <div id="main">
-                <div class="content"><h2 id="welcome-to-shifter-045">welcome to shifter 0.4.5!</h2>
+                <div class="content"><h2 id="welcome-to-shifter-046">welcome to shifter 0.4.6!</h2>
 
 <div class="intro">
 <center>
@@ -51,7 +51,7 @@
 
 <pre class="code terminal"><span class="noselect">$ </span>shifter -h
 
-blazingly fast builds with shifter@0.4.5
+blazingly fast builds with shifter@0.4.6
 
 pass no arguments and shifter will build the module from the current directory
 
@@ -71,7 +71,6 @@ pass no arguments and shifter will build the module from the current directory
                                --quiet to mute stdout from sub build
                                all other build options accepted here: (--strict, --lint, etc)
    --jsstamp&#x2F;--no-jsstamp  Should it stamp the JS with the YUI.add wrapper, defaults to --stamp
-   --istanbul              Use Istanbul code coverage instead of YUITest for coverage build
 Experimental Options:
    --semi                  Toggle on the strict semicolon checking in Uglify
    --cache&#x2F;--no-cache      Cache the results of the build and bail if building for no reason, defaults to --no-cache
@@ -123,8 +122,10 @@ directory below <code>assets</code>, shifter will do the right thing.
 
 <h2 id="coverage">Code Coverage</h2>
 
-<p>When <code>shifter</code> builds a module, it auto generates a <code>-coverage</code> file generated with <a href="http://yuilibrary.com/yuitest">YUITest Code Coverage</a></p>
-<p>If you pass the <code>--istanbul</code> option, <code>shifter</code> will use the new <a href="https://github.com/gotwarlost/istanbul">Istanbul Code Coverage</a> tool.</p>
+<p>Code coverage used to be automatically generated when <code>shifter</code> built a module, but this has been deprecated in favour of generating coverage in
+the <a href="https://github.com/yui/yeti">Yeti</a> tool.</p>
+
+<p>If you do not use <code>yeti</code>, then you will need to instrument your own coverage files.</p>
 
 <h2 id="meta">meta-data</h2>
 
@@ -277,7 +278,6 @@ merge them together, so your results may vary on this.</p>
     <br>
 <pre class="code prettyprint">&quot;shifter&quot;: {
     &quot;jsstamp&quot;: false,
-    &quot;coverage&quot;: false,
     &quot;lint&quot;: &quot;defaults&quot;
 }</pre>
 
@@ -323,7 +323,6 @@ Below is an example <code>.shifter.json</code>:
     &quot;replace-yuivar&quot;: &quot;F&quot;,
     &quot;replace-version&quot;: &quot;1.2.3.4&quot;,
     &quot;lint&quot;: false,
-    &quot;coverage&quot;: false,
     &quot;regex&quot;: &quot;^.*?(?:logger|Y.log).*?(?:;|\\).*;|(?:\\r?\\n.*?)*?\\).*;).*;?.*?\\r?\\n|^.*?(?:\&#x2F;\\*@DBG\\*\&#x2F;).*\\r?\\n&quot;
 }</pre>
 
@@ -436,7 +435,7 @@ From time to time I will add experimental options to shifter to allow for develo
 
 <p>
 You can turn on build time caching with the <code>--cache</code> config option. This will write a cache file out with the MD5's of the build. If
-the MD5 matches one in the meta file, the build will abort and skip the remaining tasks (<code>compressor, coverage, etc</code>) to speed up development.
+the MD5 matches one in the meta file, the build will abort and skip the remaining tasks (<code>yuglify, etc</code>) to speed up development.
 </p>
 
 <p>
@@ -536,7 +535,7 @@ I've added a <code>--lint-stderr</code> config option which forces all lint outp
                         <div class="bd">
                             <ul class="toc">
 <li>
-<a href="#welcome-to-shifter-045">welcome to shifter 0.4.5!</a>
+<a href="#welcome-to-shifter-046">welcome to shifter 0.4.6!</a>
 </li>
 <li>
 <a href="#what">what is shifter?</a>

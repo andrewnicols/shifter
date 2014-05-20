@@ -98,9 +98,6 @@ var tests = {
                     },
                     'debug should be same': function(err, results) {
                         assert.equal(results.pre['yql-debug.js'], results.post['yql-debug.js']);
-                    },
-                    'coverage should be same': function(err, results) {
-                        assert.equal(results.pre['yql-coverage.js'], results.post['yql-coverage.js']);
                     }
                 },
                 'should respect mod.assets=false and': {

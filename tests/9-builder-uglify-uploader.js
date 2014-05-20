@@ -125,9 +125,6 @@ var tests = {
                     },
                     'debug should be same': function(err, results) {
                         assert.equal(results.pre['uploader-debug.js'], results.post['uploader-debug.js']);
-                    },
-                    'coverage should be same': function(err, results) {
-                        assert.equal(results.pre['uploader-coverage.js'], results.post['uploader-coverage.js']);
                     }
                 }
             }
