@@ -17,7 +17,7 @@
     "cpr": "~0.0.6",
     "mkdirp": "*",
     "rimraf": "*",
-    "istanbul": "^0.4.5",
+    "istanbul": "https://github.com/andrewnicols/istanbul/archive/v0.4.5_moodle.tar.gz",
     "which": "*",
     "yuglify": "^2.0.0",
     "timethat": "~0.0.1",
